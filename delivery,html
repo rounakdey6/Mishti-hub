@@ -1,0 +1,368 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mishti Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        
+        .delivery-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .delivery-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px #FFD580;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .time-slot {
+            padding: 10px;
+            border: 2px solid #e67e22;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .time-slot:hover {
+            background: #fff3e0;
+        }
+
+        .time-slot.selected {
+            background: #e67e22;
+            color: white;
+        }
+
+        .order-summary {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .submit-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #d35400;
+            transform: scale(1.02);
+        }
+
+        .error {
+            color: #ff0000;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #map {
+            height: 200px;
+            margin-top: 10px;
+            border-radius: 5px;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <img src="img/DALL·E 2024-10-19 23.08.32 - A colorful illustration of an Indian sweet vendor standing in a vibrant sweets stall filled with various traditional Indian sweets displayed on shelve.webp"
+                alt="" height="40px" width="40px">
+            <a href="">Mishti Hub</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="delivery,html">Delivery</a>
+            <a href="dinein.html">Dine in </a>
+        </div>
+    </div>
+
+    <div class="delivery-container">
+        <h1>Delivery Details</h1>
+        <form id="deliveryForm" class="delivery-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+                <div class="error" id="nameError">Please enter your name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+                <div class="error" id="phoneError">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Delivery Address</label>
+                <textarea id="address" rows="3" required></textarea>
+                <div class="error" id="addressError">Please enter your address</div>
+                <div id="map"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Delivery Time</label>
+                <div class="time-slots">
+                    <div class="time-slot">10:00 - 12:00</div>
+                    <div class="time-slot">12:00 - 14:00</div>
+                    <div class="time-slot">14:00 - 16:00</div>
+                    <div class="time-slot">16:00 - 18:00</div>
+                    <div class="time-slot">18:00 - 20:00</div>
+                </div>
+                <div class="error" id="timeError">Please select a delivery time</div>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <p>Items: <span id="itemCount">0</span></p>
+                <p>Subtotal: ₹<span id="subtotal">0</span></p>
+                <p>Delivery Fee: ₹40</p>
+                <p>Total: ₹<span id="total">40</span></p>
+            </div>
+
+            <button type="submit" class="submit-btn">Place Order</button>
+        </form>
+        <div class="success-message">
+            Order placed successfully! We will deliver your sweets at the selected time.
+        </div>
+    </div>
+
+    <section class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h2>Useful Links</h2>
+                <ul class="links">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">My Account</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="" class="link">FAQ</a></li>
+                    <li><a href="">Our Blogs</a></li>
+                    <li><a href="">Customer Agreement</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Sweets</h2>
+                <ul class="links">
+                    <li><a href="">Rosogolla</a></li>
+                    <li><a href="">Golap Jamun</a></li>
+                    <li><a href="">Kalakand</a></li>
+                    <li><a href="">Doi</a></li>
+
+
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Opening-Hours</h2>
+                <ul class="links">
+                    <li><a href="">Mon - Sat : 8:30 AM - 10:30 PM</a></li>
+                    <li><a href="">Sun : 9:30 AM - 10:30 PM</a></li>
+
+                </ul>
+                <br>
+                <br>
+
+                <h2>Locations</h2>
+                <ul class="links">
+                    <li><a href=""><i class="fa-solid fa-location-dot"></i>Newtown-Kolkata</a></li>
+                    <li><a href=""><i class="fa-solid fa-location-dot"></i>Shyambazar-Kolkata</a></li>
+                    <li><a href=""><i class="fa-solid fa-location-dot"></i>Barasat-Kolkata</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Need Help?</h2>
+                <ul class="links">
+                    <li><a href="" class="social"><i class="fa fa-phone"></i> +91 90904500112</a>
+                    </li>
+                    <li><a href="" class="social"><i class="fa-solid fa-phone"></i> +91 90904500112</a>
+                    </li>
+                    <li><a href="" class="social"><i class="fa-solid fa-envelope"></i>
+                            mail@1234567.com</a></li>
+                </ul>
+                <br>
+
+                <h2>Follow Us</h2>
+                <ul class="links">
+                    <li><a href="https://www.facebook.com/" class="social"><i class="fa-brands fa-facebook-f"></i>
+                            Facebook</a></li>
+                    <li><a href="https://www.instagram.com/" class="social"><i class="fa-brands fa-instagram"></i>
+                            Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/" class="social"><i class="fa-brands fa-linkedin-in"></i>
+                            Linkedin</a></li>
+                    <li><a href="https://www.twitter.com/" class="social"><i class="fa-brands fa-x-twitter"></i>
+                            Twitter</a></li>
+                    <li><a href="#" class="social"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-col">
+
+                <h2>Newsletter</h2>
+                <p>
+                    Subscribe to our newsletter
+                </p>
+                
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('deliveryForm');
+            const timeSlots = document.querySelectorAll('.time-slot');
+            let selectedTimeSlot = null;
+
+            // Time slot selection
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', () => {
+                    timeSlots.forEach(s => s.classList.remove('selected'));
+                    slot.classList.add('selected');
+                    selectedTimeSlot = slot.textContent;
+                    document.getElementById('timeError').style.display = 'none';
+                });
+            });
+
+            // Form validation
+            function validatePhone(phone) {
+                return /^[0-9]{10}$/.test(phone);
+            }
+
+            function showError(elementId, show) {
+                document.getElementById(elementId).style.display = show ? 'block' : 'none';
+            }
+
+            // Form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                // Validate name
+                if (!form.name.value.trim()) {
+                    showError('nameError', true);
+                    isValid = false;
+                } else {
+                    showError('nameError', false);
+                }
+
+                // Validate phone
+                if (!validatePhone(form.phone.value)) {
+                    showError('phoneError', true);
+                    isValid = false;
+                } else {
+                    showError('phoneError', false);
+                }
+
+                // Validate address
+                if (!form.address.value.trim()) {
+                    showError('addressError', true);
+                    isValid = false;
+                } else {
+                    showError('addressError', false);
+                }
+
+                // Validate time slot
+                if (!selectedTimeSlot) {
+                    showError('timeError', true);
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // Animate button
+                    const submitBtn = form.querySelector('.submit-btn');
+                    submitBtn.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        submitBtn.style.transform = 'scale(1)';
+                        form.style.display = 'none';
+                        document.querySelector('.success-message').style.display = 'block';
+                    }, 200);
+                }
+            });
+
+            // Real-time validation
+            form.name.addEventListener('input', () => {
+                showError('nameError', !form.name.value.trim());
+            });
+
+            form.phone.addEventListener('input', () => {
+                showError('phoneError', !validatePhone(form.phone.value));
+            });
+
+            form.address.addEventListener('input', () => {
+                showError('addressError', !form.address.value.trim());
+            });
+
+            // Update order summary from localStorage or session
+            function updateOrderSummary() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const itemCount = cart.length;
+                const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+                const deliveryFee = 40;
+                const total = subtotal + deliveryFee;
+
+                document.getElementById('itemCount').textContent = itemCount;
+                document.getElementById('subtotal').textContent = subtotal;
+                document.getElementById('total').textContent = total;
+            }
+
+            updateOrderSummary();
+        });
+    </script>
+</body>
+</html>

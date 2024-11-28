@@ -1,0 +1,394 @@
+.nav-bar{
+    display: flex;
+    align-items: center;
+    background-color: #ff8a33;
+    margin: auto;
+    
+ }
+ .logo{
+    display: flex;
+    align-items: center;
+    padding-left: 10px
+ }
+ .logo a{
+   text-decoration: none;
+   font-size: 20px;
+   padding : 10px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: bolder;
+   color: brown;
+   
+    
+ }
+ .nav-links{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+ }
+ .nav-links a{
+    text-decoration: none;
+    padding-left: 200px;
+    color: brown; 
+ }
+ .nav-links a:hover{
+    color: blue;
+ }
+ section {
+   margin: 50px 
+   
+  }
+.home {
+    display: flex;
+    flex-direction: flex; /* Stack text and grid vertically */
+    align-items:center ; /* Center align content */
+    padding: 10px; /* Add padding to the section */
+     /* Light background color */
+}
+
+.text {
+    ; /* Center the text */
+    margin-bottom: 20px; /* Space between text and grid */
+}
+
+h1 {
+    font-size: 4rem; /* Adjust heading size */
+    color: #333;
+     /* Dark color for contrast */
+}
+
+h4 {
+    font-size: 1rem; /* Adjust subtitle size */
+    color: #666; /* Slightly lighter color */
+    margin-bottom: 15px;
+    margin-top:25px ;
+    max-width: 700px/* Space between subtitle and button */
+}
+
+.order {
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Button font size */
+    background-color: #ff6f61; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.order:hover {
+    background-color: #ff4a4a; /* Darker shade on hover */
+}
+.grid {
+   width: 50%;
+   aspect-ratio: 1.5;
+   display: grid;
+   grid-template-columns: auto auto;
+   gap: 15px;
+   
+   margin-left:auto;
+   
+   
+}
+.grid-box {
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   transition: 0.4s;
+   filter: brightness(70%);
+
+}
+.grid-box:hover {
+   transform: scale(1.04);
+   filter: brightness(100%);
+
+}
+.grid-box:nth-of-type(1) {
+   border-radius: 25px 0px 0px 0px;
+   background-image: url("./img/k.jpg");
+}
+
+.grid-box:nth-of-type(2) {
+   border-radius: 0px 25px 0px 0;
+   background-image: url("./img/Patishapta-1024x538.png");
+}
+
+.grid-box:nth-of-type(3) {
+   border-radius: 0px 0px 0px 25px;
+   background-image: url("./img/rasgulla-indian-dessert-1957839-hero-01-7c3528a2d34a4f1b9248c7483a73d0a6.jpg");
+}
+
+.grid-box:nth-of-type(4) {
+   border-radius: 0px 0px 25px 0px;
+   background-image: url("./img/Sandesh-1024x538.png");
+}
+
+* {
+    margin: 0;
+    font-weight: 300;
+
+}
+
+section>h1 {
+    text-align: center;
+    font-size: 30px;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    background-color: #ff8a33;
+    width: fit-content;
+    color: white;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.service-box {
+    display: flex;
+    gap: 15px;
+    padding-block: 5px;
+    margin-top: 10px;
+
+
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid orange;
+    border-radius: 5%;
+    padding: 10px;
+    box-shadow: 5px 5px #ff8a33;
+    text-align: center;
+
+}
+
+.service:hover {
+    background-color: antiquewhite;
+    transform: scale(1.02)
+}
+
+
+
+button {
+    margin-bottom: 10px;
+}
+
+.location {
+    border-radius: 10px;
+    background-color: #ff8a33;
+    box-shadow: 5px 5px#808080
+}
+
+.location:hover {
+    background-color: #e67e22;
+
+}
+
+.reason-box {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    padding-block: 5px;
+    margin-top: 10px;
+
+
+}
+
+
+.reasons-text {
+    display: flex;
+    border: 1px solid #ff8a33;
+    border-radius: 5%;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.contact form {
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+    margin: 50px 0;
+    padding: 25px 0;
+    box-shadow: 0 0 15px #ff8a33;
+}
+
+.contact form .row {
+    padding: 0;
+    width: 95%;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.contact form .input-box {
+    width: 100%;
+}
+
+.contact form .input-box label {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.contact form .input-box input,
+.contact form .input-box textarea {
+
+    font-size: 15px;
+    width: 100%;
+    padding: 7px 10px;
+    margin-top: 4px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.contact form .input-box input:focus,
+.contact form .input-box textarea:focus {
+    outline: 2px solid #ff8a33;
+}
+
+.contact form .row:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+button {
+    border-radius: 10%;
+    background-color: #ff8a33;
+    margin-top: 10px;
+    cursor: pointer
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+/* Basic Footer Styling */
+.footer {
+    background-image: url(https://t3.ftcdn.net/jpg/08/65/80/58/240_F_865805869_JGY8JU5ILz6nMvxzJvaorHBjYvegqGdd.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    color: white;
+}
+
+.footer .footer-row {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.footer .footer-row h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    color: #ff8a33;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff8a33;
+    padding-bottom: 10px;
+}
+
+.footer-col {
+    flex: 0 1 calc(20% - 2rem);
+    min-width: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-col .links {
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+.footer-col .links li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.footer-col .links a {
+    color: #ff8a33;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.footer-col .links a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-col .links .social i {
+    margin-right: 10px;
+    color: #ff8a33;
+}
+
+.footer-col .links .social:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer .footer-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+   
+}
+@media (max-width: 768px) {
+    .footer-col {
+        flex: 0 1 calc(50% - 2rem);
+    }
+}
+@media (max-width: 480px) {
+    .footer-col {
+        flex: 0 1 100%;
+    }
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e67e22;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.footer-col form button {
+    border: none;
+    border-radius: 6px;
+
+}
+
+button,
+input[type="submit"] {
+    background-image: var(--background-image);
+    font-size: 16px;
+    padding: 8px 30px;
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    color: var(--body-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+//dine-in 
+
+    
+    
+
+   
+
+
+
